@@ -1,5 +1,5 @@
 # ATM
-import java.util.Scanner
+import java.util.Scanner;
 class Account{
   private String acc_Num;
   private String pin_Num;
@@ -26,16 +26,16 @@ class Account{
   }
 public class ATMInterface {
     public static void main(String[] args) {
-        // Initialize an example account (replace this with your account management system)
-        Account account = new Account("1234567890", "1234", 1000.0);
+        
+        Account account = new Account("9786534210", "1324", 1000.0);
 
-        // Start the ATM interface
+        
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the ATM!");
         System.out.print("Enter your account number: ");
         String enteredAccountNumber = scanner.nextLine();
 
-        // Verify the account number (in a real application, you'd look up the account in the database)
+        
         if (!enteredAccountNumber.equals(account.getAccountNum())) {
             System.out.println("Invalid account number. Exiting...");
             return;
@@ -44,13 +44,13 @@ public class ATMInterface {
         System.out.print("Enter your PIN: ");
         String enteredPin = scanner.nextLine();
 
-        // Verify the PIN
+        
         if (!account.verifyPin(enteredPin)) {
             System.out.println("Invalid PIN. Exiting...");
             return;
         }
 
-        // Show the main menu
+       
         while (true) {
             System.out.println("\nMain Menu:");
             System.out.println("1. Check Balance");
@@ -88,4 +88,5 @@ public class ATMInterface {
             }
         }
     }
+}
 }
