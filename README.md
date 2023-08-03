@@ -1,38 +1,29 @@
 # ATM
-import java.util.Scanner;
-
-class Account {
-    private String accountNumber;
-    private String pin;
-    private double balance;
-
-    public Account(String accountNumber, String pin, double initialBalance) {
-        this.accountNumber = accountNumber;
-        this.pin = pin;
-        this.balance = initialBalance;
-    }
-
-    public String getAccountNumber() {
-        return accountNumber;
-    }
-
-    public boolean verifyPin(String enteredPin) {
-        return pin.equals(enteredPin);
-    }
-
-    public double getBalance() {
-        return balance;
-    }
-
-    public void withdraw(double amount) {
-        balance -= amount;
-    }
-
-    public void deposit(double amount) {
-        balance += amount;
-    }
-}
-
+import java.util.Scanner
+class Account{
+  private String acc_Num;
+  private String pin_Num;
+  private double acc_Bal;
+  public Account(String acc_num,String pin_Num,double initialBal){
+    this.acc_Num=acc_Num;
+    this.pin_Num=pin_Num;
+    this.acc_Bal=initialBal;
+  }
+  public String getAccountNum(){
+   return acc_Num;
+  }
+  public boolean verifyPin(String enteredPin){
+   return pin_Num.equals(enteredPin);
+  }
+  public double getBalance(){
+   return acc_Bal;
+  }
+  public void withdraw(double amount){
+    acc_Bal -= amount;
+  }
+   public void deposit(double amount) {
+    acc_Bal += amount;
+  }
 public class ATMInterface {
     public static void main(String[] args) {
         // Initialize an example account (replace this with your account management system)
@@ -45,7 +36,7 @@ public class ATMInterface {
         String enteredAccountNumber = scanner.nextLine();
 
         // Verify the account number (in a real application, you'd look up the account in the database)
-        if (!enteredAccountNumber.equals(account.getAccountNumber())) {
+        if (!enteredAccountNumber.equals(account.getAccountNum())) {
             System.out.println("Invalid account number. Exiting...");
             return;
         }
