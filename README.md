@@ -71,7 +71,7 @@ public class ATMInterface {
 
             switch (choice) {
                 case 1:
-                    System.out.println("Your balance: $" + account.getBalance());
+                    System.out.println("Your balance: ₹" + account.getBalance());
                     break;
                 case 2:
                     System.out.print("Enter the amount to withdraw: ");
@@ -80,14 +80,14 @@ public class ATMInterface {
                         System.out.println("Insufficient funds!");
                     } else {
                         account.withdraw(withdrawAmount);
-                        System.out.println("Withdrawal successful. Your new balance: $" + account.getBalance());
+                        System.out.println("Withdrawal successful. Your new balance: ₹" + account.getBalance());
                     }
                     break;
                 case 3:
                     System.out.print("Enter the amount to deposit: ");
                     double depositAmount = scanner.nextDouble();
                     account.deposit(depositAmount);
-                    System.out.println("Deposit successful. Your new balance: $" + account.getBalance());
+                    System.out.println("Deposit successful. Your new balance: ₹" + account.getBalance());
                     break;
                 case 4:
                     System.out.println("Thank you for using the ATM. Goodbye!");
